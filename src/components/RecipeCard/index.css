@@ -1,0 +1,77 @@
+.recipe-card {
+    width: 280px;
+    height: 180px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: height 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.recipe-card:hover {
+    height: 350px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Recipe Image */
+.recipe-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay for Recipe Name & Chef */
+.recipe-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(100, 246, 251, 0.6);
+    color: #0A2533;
+    text-align:left;
+}
+
+.recipe-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.chef {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Slide-up details */
+.recipe-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-in-out;
+}
+
+.recipe-card:hover .recipe-details {
+    transform: translateY(0);
+}
+
+/* Text styles */
+.meal-type, .description, .ratings, .uploaded {
+    font-size: 0.9rem;
+    color: #444;
+    margin:8px;
+    text-align: left;
+}
+
+/* FontAwesome Icons */
+.meal-type i, .description i, .ratings i, .uploaded i {
+    margin-right: 5px;
+    color: #0A2533;
+}

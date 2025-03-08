@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.navbar {
+    background: linear-gradient(135deg, #FF7E5F, #FD3A69);
+    height: 65px;  
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+.nav-container {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-website-logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.home-website-logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;  
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    transition: transform 0.2s;
+}
+
+.nav-links li:hover {
+    transform: translateY(-2px);
+}
+
+.nav-links a {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #FFD700;
+}
+
+/* Mobile Menu */
+.menu-icon {
+    display: none;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Menu icon animation */
+.menu-icon i {
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon.open i {
+    transform: rotate(180deg);
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        right: 10px;
+        background: #FD3A69;
+        width: 200px;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        transform: translateY(-10px);
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-links.open {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}

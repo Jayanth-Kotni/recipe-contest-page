@@ -1,0 +1,107 @@
+.recipe-list-container {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Filter Icon Button (Visible in Small Screens) */
+.filter-toggle {
+  display: none;
+  background: #3DA0A7;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.filter-toggle i {
+  margin-right: 5px;
+}
+
+/* Content Wrapper (Filter + Recipes) */
+.content {
+  display: flex;
+  gap: 20px;
+}
+
+/* Sidebar for Large Screens */
+.filter-sidebar-container {
+  width: 250px;
+  display: block;
+}
+
+/* Recipe Cards */
+.recipe-container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Recipe Card Animation */
+.recipe-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease-in-out forwards;
+}
+
+/* Staggered Animation Effect */
+.recipe-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.recipe-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.recipe-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.recipe-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.recipe-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* Fade-in and slide-up effect */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .filter-toggle {
+    display: block;
+  }
+
+  .filter-sidebar-container {
+    display: none;
+    position: relative;
+    top: 60px;
+    left: 10px;
+    width: 80%;
+    background: white;
+    z-index: 10;
+    padding: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  /* Show Sidebar When "Filters" Button Clicked */
+  .show-filters .filter-sidebar-container {
+    display: block;
+  }
+}
